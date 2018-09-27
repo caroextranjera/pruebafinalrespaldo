@@ -13,7 +13,7 @@
 		$get_arg->the_post();
 	?>
 		<section class="derecha">
-			<img class="img-responsive" src="<?php echo get_theme_file_uri() ?>/img/sitio/pizza.jpg">
+			<?php the_post_thumbnail('custom-size-blog', array('class' => 'img-responsive')); ?>
            <div class="right">
 			<article>
 				<h5><?php the_title() ?></h5>
@@ -21,24 +21,30 @@
 			<div class="row">
 				<div class="col-6">
 				   <h5> <?php the_field('menu-1'); ?> </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/polenta_frita.jpg">
+
+						<?php $image = get_field('imagen-1'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
+
 						<p><?php the_field('contenido-1'); ?></p>
                  </div>
                  <div class="col-6">
 					<h5><?php the_field('menu-2'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/peperonata.jpg">
+							<?php $image = get_field('imagen-2'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-2'); ?></p>
                  </div>
 			</div>
 			<div class="row">
 				<div class="col-6">
 					<h5><?php the_field('menu-3'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/provoleta_oregano.jpg">
+							<?php $image = get_field('imagen-3'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-3'); ?></p>
                  </div>
 				<div class="col-6">
 					<h5><?php the_field('menu-4'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/melazane_e_prosciuto.jpg">
+							<?php $image = get_field('imagen-4'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-4'); ?></p>
                  </div>
 			</div>
@@ -61,7 +67,9 @@
 		$get_arg->the_post();
 	?>
 <section class="izquierda">
-			<img class="img-responsive" src="<?php echo get_theme_file_uri() ?>/img/sitio/il_fonti_di_modena.jpg">
+
+			<?php the_post_thumbnail('custom-size-blog', array('class' => 'img-responsive')); ?>
+
 <div class="left">
 		<article>
 				<h5><?php the_title() ?></h5>
@@ -69,19 +77,24 @@
 			<div class="row">
 				<div class="col-6">
 				   <h5> <?php the_field('menu-1'); ?> </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/insalatta_danubio.jpg">
+
+						<?php $image = get_field('imagen-1'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
+
 						<p><?php the_field('contenido-1'); ?></p>
                  </div>
                  <div class="col-6">
 					<h5><?php the_field('menu-2'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/insalatta_pilarre.jpg">
+						<?php $image = get_field('imagen-2'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-2'); ?></p>
                  </div>
 			</div>
 			<div class="row">
 				<div class="col-6">
 					<h5><?php the_field('menu-3'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/insalatta_andree.jpg">
+						<?php $image = get_field('imagen-3'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-3'); ?></p>
                  </div>
 				<div class="col-6">
@@ -107,7 +120,7 @@
 		$get_arg->the_post();
 	?>
 <section class="derecha">
-			<img class="img-responsive" src="<?php echo get_theme_file_uri() ?>/img/sitio/mesas.jpg">
+			<?php the_post_thumbnail('custom-size-blog', array('class' => 'img-responsive')); ?>
 <div class="right">
 				<article>
 				<h5><?php the_title() ?></h5>
@@ -115,12 +128,14 @@
 			<div class="row">
 				<div class="col-6">
 				   <h5> <?php the_field('menu-1'); ?> </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/zuppa_di_chef.jpg">
+							<?php $image = get_field('imagen-1'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-1'); ?></p>
                  </div>
                  <div class="col-6">
 					<h5><?php the_field('menu-2'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/ministrone_genovese.jpg">
+							<?php $image = get_field('imagen-2'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-2'); ?></p>
                  </div>
                  </div>
@@ -143,7 +158,7 @@
 	?>
 
 <section class="izquierda">
-			<img class="img-responsive" src="<?php echo get_theme_file_uri() ?>/img/sitio/pasta.jpg">
+			<?php the_post_thumbnail('custom-size-blog', array('class' => 'img-responsive')); ?>
 <div class="left">
 	<article>
 		<h5><?php the_title() ?></h5>
@@ -151,24 +166,28 @@
 			     <div class="row">
 				<div class="col-6">
 				   <h5> <?php the_field('menu-1'); ?> </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/marguerita.jpg">
+						<?php $image = get_field('imagen-1'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-1'); ?></p>
                  </div>
                  <div class="col-6">
 					<h5><?php the_field('menu-2'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/marinara.jpg">
+						<?php $image = get_field('imagen-2'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-2'); ?></p>
                  </div>
 			</div>
 			<div class="row">
 				<div class="col-6">
 					<h5><?php the_field('menu-3'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/caprissiosa.jpg">
+						<?php $image = get_field('imagen-3'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-3'); ?></p>
                  </div>
 				<div class="col-6">
 					<h5><?php the_field('menu-4'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/cinque_formaggi.jpg">
+						<?php $image = get_field('imagen-4'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-4'); ?></p>
                  </div>
 			</div>
@@ -191,7 +210,7 @@
 	?>
 
 <section class="derecha">
-			<img class="img-responsive" src="<?php echo get_theme_file_uri() ?>/img/platos/mediterranea.jpg">
+			<?php the_post_thumbnail('custom-size-blog', array('class' => 'img-responsive')); ?>
 <div class="right">
 	<article>
 		<h5><?php the_title() ?></h5>
@@ -199,24 +218,28 @@
 			     <div class="row">
 				<div class="col-6">
 				   <h5> <?php the_field('menu-1'); ?> </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/putannesca.jpg">
+					<?php $image = get_field('imagen-1'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-1'); ?></p>
                  </div>
                  <div class="col-6">
 					<h5><?php the_field('menu-2'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/caprissiosa.jpg">
+						<?php $image = get_field('imagen-2'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-2'); ?></p>
                  </div>
 			</div>
 			<div class="row">
 				<div class="col-6">
 					<h5><?php the_field('menu-3'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/torino.jpg">
+					<?php $image = get_field('imagen-3'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-3'); ?></p>
                  </div>
 				<div class="col-6">
 					<h5><?php the_field('menu-4'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/griega.jpg">
+						<?php $image = get_field('imagen-3'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-4'); ?></p>
                  </div>
 			</div>
@@ -238,7 +261,7 @@
 		$get_arg->the_post();
 	?>
 <section class="izquierda">
-			<img class="img-responsive" src="<?php echo get_theme_file_uri() ?>/img/platos/tiramisu.jpg">
+			<?php the_post_thumbnail('custom-size-blog', array('class' => 'img-responsive')); ?>
 <div class="left">
 	<article>
 		<h5><?php the_title() ?></h5>
@@ -246,24 +269,28 @@
 			     <div class="row">
 				<div class="col-6">
 				   <h5> <?php the_field('menu-1'); ?> </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/gelato.jpg">
+						<?php $image = get_field('imagen-1'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-1'); ?></p>
                  </div>
                  <div class="col-6">
 					<h5><?php the_field('menu-2'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/gelato_di_ciocolatto.jpg">
+						<?php $image = get_field('imagen-2'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-2'); ?></p>
                  </div>
 			</div>
 			<div class="row">
 				<div class="col-6">
 					<h5><?php the_field('menu-3'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/panna_cotta.jpg">
+						<?php $image = get_field('imagen-3'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-3'); ?></p>
                  </div>
 				<div class="col-6">
 					<h5><?php the_field('menu-4'); ?>  </h5>
-						<img class="detalle" src="<?php echo get_theme_file_uri() ?>/img/platos/moccaccino.jpg">
+						<?php $image = get_field('imagen-4'); ?>
+						<img class="detalle" src="<?php echo $image['sizes']['square'] ?>">
 						<p><?php the_field('contenido-4'); ?></p>
                  </div>
 			</div>

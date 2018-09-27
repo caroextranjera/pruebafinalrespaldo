@@ -5,11 +5,11 @@ function register_enqueue_style(){
 
 wp_register_style('fontawesome', 'https://use.fontawesome.com/releases/v5.1.0/css/all.css');
 
-wp_register_style('mitemacss', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
+wp_register_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
 wp_register_style ('style-css', get_theme_file_uri('css/style.css'), null,  null, 'screen');
 
 wp_enqueue_style('fontawesome');
-wp_enqueue_style('mitemacss');
+wp_enqueue_style('bootstrap');
 wp_enqueue_style('style-css');
 
 
@@ -56,8 +56,31 @@ remove_action ('shutdown', 'wp_ob_end_flush_all', 1);
   }
   add_action( 'after_setup_theme', 'config_custom_logo' );
 
+
+  function thumbnails_setup() {
+    add_theme_support( 'post-thumbnails' );
+  }
+
+  function dl_image_sizes( $sizes ) {
+    $add_sizes = array(
+      'portfolio-home'		=> __( 'Tamaño de las imágenes del portafolio en el home' ),
+      'square'				=> __( 'Tamaño personalizado para hacer cuadradas las imágenes' ),
+      'post-custom-size'	=> __( 'Tamaño personalizado para la imagen destada de los post' ),
+      'custom-size-blog'	=> __( 'Tamaño personalizado para la imagen destada de los post' )
+    );
+    return array_merge( $sizes, $add_sizes );
+  }
+  if ( function_exists( 'add_theme_support' ) ) {
+    add_image_size( 'portfolio-home', 465, 250, true );
+    add_image_size( 'square', 400, 400, true );
+    add_image_size( 'post-custom-size', 800, 600, true );
+    add_image_size( 'custom-size-blog', 400, 300, true );
+    add_filter( 'image_size_names_choose', 'dl_image_sizes' );
+  }
+  add_action( 'after_setup_theme', 'thumbnails_setup' );
+
 // Register Custom Post Type
-function Derecha() {
+function Derecha_CPT() {
 
 	$labels = array(
 		'name'                  => _x( 'derechas', 'Post Type General Name', 'text_domain' ),
@@ -110,7 +133,7 @@ function Derecha() {
 	register_post_type( 'Derecha', $args );
 
 }
-add_action( 'init', 'Derecha', 0 );
+add_action( 'init', 'Derecha_CPT', 0 );
 
 // Register Custom Post Type
 function Ensalada() {
